@@ -11,4 +11,5 @@ Para compilar:
 
 Para executar:
 > ./output.o
+
 OBS: Adicione a imagem nesse arquivo antes de executar
