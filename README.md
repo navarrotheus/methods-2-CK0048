@@ -1,4 +1,4 @@
-<h1>Métodos Numéricos II</h1>
+<h1 align = "center">Métodos Numéricos II</h1>
 
 <p align = "center">
    <a href="Tarefa-01">Tarefa 01</a>&nbsp;|&nbsp;
