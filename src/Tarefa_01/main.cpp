@@ -40,6 +40,14 @@ int main(int argc, char** argv) {
       }
       break;
     case 2:
+      for (int i = 0; i < image.rows; i++){
+        for (int j = 0; j < image.cols; j++){
+          newImage.at<uchar>(i, j) = (image.at<uchar>(i-1,j+1) + (image.at<uchar>(i,j+1)*2)
+          + image.at<uchar>(i+1,j+1) + (image.at<uchar>(i-1,j)*2) + (image.at<uchar>(i,j)*4)
+          + (image.at<uchar>(i+1,j)*2) + image.at<uchar>(i-1,j-1) + (image.at<uchar>(i,j-1)*2)
+          + image.at<uchar>(i+1,j-1))/16;
+        }
+      }
       break;
   }
 
@@ -49,6 +57,8 @@ int main(int argc, char** argv) {
 
   imshow( "Imagem original", image );
   imshow( "Imagem nova", newImage );
+
+  cout << "Pressione qualquer tecla para interromper a exibição" << endl;
 
   waitKey(0);
   return 0;
