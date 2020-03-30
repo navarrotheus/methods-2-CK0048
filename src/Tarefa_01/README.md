@@ -8,6 +8,7 @@
 
 Para compilar:
 > g++ main.cpp -o output.o `pkg-config --cflags --libs opencv`
+
 Para executar:
 > ./output.o
 OBS: Adicione a imagem nesse arquivo antes de executar
