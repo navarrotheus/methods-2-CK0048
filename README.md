@@ -1,9 +1,9 @@
 <h1 align = "center">Métodos Numéricos II</h1>
 
 <p align = "center">
-   <a href="Tarefa-01">Tarefa 01</a>&nbsp;|&nbsp;
-   <a href="Tarefa-02">Tarefa 02</a>&nbsp;|&nbsp;
-   <a href="Tarefa-03">Tarefa 03</a>&nbsp;
+   <a href="#tarefa-01">Tarefa 01</a>&nbsp;|&nbsp;
+   <a href="#tarefa-02">Tarefa 02</a>&nbsp;|&nbsp;
+   <a href="#tarefa-03">Tarefa 03</a>&nbsp;
 </p>
 
 <h2>Tarefa 01</h2>
