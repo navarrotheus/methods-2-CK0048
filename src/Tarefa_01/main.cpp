@@ -19,6 +19,9 @@ int main(int argc, char** argv) {
       return -1;
   }
 
+  // Criando borda na imagem
+  copyMakeBorder(image, image, 1, 1, 1, 1, BORDER_CONSTANT, 0);
+
   // Criando nova imagem
   Mat newImage = Mat::zeros( image.size(), image.type() );
 
@@ -30,22 +33,27 @@ int main(int argc, char** argv) {
   cout << "3) Detector de bordas" << endl;
   cout << "4) Sharpen Effect" << endl;
   cout << "5) Embossing Effect" << endl;
-  cout << "6) Creto" << endl;
   cin >> opt;
+
+  while (opt != 1 && opt != 2 && opt != 3 && opt != 4 && opt != 5) {
+    cout << "Opção inválida, entre novamente" << endl;
+    cin >> opt;
+  }
 
   // Realizando algoritmo de acordo com opção escolhida
   switch (opt) {
     case 1:
-      for (int i = 0; i < image.rows; i++){
-        for (int j = 0; j < image.cols; j++){
+      // Como temos uma borda, começamos pelo index 1 e percorremos uma linha e uma coluna a menos
+      for (int i = 1; i < image.rows - 1; i++){
+        for (int j = 1; j < image.cols - 1; j++){
           newImage.at<uchar>(i,j) = abs((image.at<uchar>(i+1,j) + image.at<uchar>(i-1,j)
           + image.at<uchar>(i,j+1) + image.at<uchar>(i,j-1))/4);
         }
       }
       break;
     case 2:
-      for (int i = 0; i < image.rows; i++){
-        for (int j = 0; j < image.cols; j++){
+      for (int i = 1; i < image.rows - 1; i++){
+        for (int j = 1; j < image.cols - 1; j++){
           newImage.at<uchar>(i,j) = abs((image.at<uchar>(i+1,j-1) + (image.at<uchar>(i+1,j)*2)
           + image.at<uchar>(i+1,j+1) + (image.at<uchar>(i,j+1)*2) + (image.at<uchar>(i,j)*4)
           + (image.at<uchar>(i,j-1)*2) + image.at<uchar>(i-1,j-1) + (image.at<uchar>(i-1,j)*2)
@@ -54,33 +62,30 @@ int main(int argc, char** argv) {
       }
       break;
     case 3:
-      for (int i = 0; i < image.rows; i++){
-        for (int j = 0; j < image.cols; j++){
+      for (int i = 1; i < image.rows - 1; i++){
+        for (int j = 1; j < image.cols - 1; j++){
           newImage.at<uchar>(i,j) = abs(image.at<uchar>(i,j+1) - image.at<uchar>(i,j-1)
           + image.at<uchar>(i+1,j) - image.at<uchar>(i-1,j));
         }
       }
       break;
     case 4:
-      for (int i = 0; i < image.rows; i++){
-        for (int j = 0; j < image.cols; j++){
+      for (int i = 1; i < image.rows - 1; i++){
+        for (int j = 1; j < image.cols - 1; j++){
           newImage.at<uchar>(i,j) = abs((image.at<uchar>(i,j)*5) - image.at<uchar>(i+1,j)
           - image.at<uchar>(i-1,j) - image.at<uchar>(i,j+1) - image.at<uchar>(i,j-1));
         }
       }
       break;
     case 5:
-      for (int i = 0; i < image.rows; i++){
-        for (int j = 0; j < image.cols; j++){
+      for (int i = 1; i < image.rows - 1; i++){
+        for (int j = 1; j < image.cols - 1; j++){
           newImage.at<uchar>(i,j) = abs(image.at<uchar>(i+1,j-1) + image.at<uchar>(i+1,j)
           + image.at<uchar>(i,j-1) - image.at<uchar>(i,j+1) - image.at<uchar>(i-1,j)
           - image.at<uchar>(i-1,j+1) + 128);
         }
       }
-    case 6:
-      copyMakeBorder(image, image, 1, 1, 1, 1, BORDER_CONSTANT, 0);
       break;
-
   }
 
   // Demonstrando imagem
@@ -92,6 +97,7 @@ int main(int argc, char** argv) {
 
   cout << "Pressione qualquer tecla para interromper a exibição" << endl;
 
-  waitKey(0);
+  waitKey();
+
   return 0;
 }
