@@ -5,12 +5,17 @@ using namespace cv;
 using namespace std;
 
 int main(int argc, char** argv) {
+  // Pegando o nome da imagem (presente na pasta)
+  string nameImage;
+  cout << "Qual o nome da imagem?" << endl;
+  cin >> nameImage;
+
   // Lendo imagem e colocando-a em escala de cinza
   Mat image;
-  image = imread("sample.jpeg" , CV_LOAD_IMAGE_GRAYSCALE);
+  image = imread(nameImage , CV_LOAD_IMAGE_GRAYSCALE);
 
   if(!image.data) {
-      cout <<  "Could not open or find the image" << endl ;
+      cout <<  "Não foi possível abrir ou ler a imagem" << endl ;
       return -1;
   }
 
@@ -19,9 +24,9 @@ int main(int argc, char** argv) {
 
   // Menu de inicialização
   int opt;
-  cout << "Selecione a opção desejada" << "\n";
-  cout << "1) Box Blur" << "\n";
-  cout << "2) Gaussian Blur" << "\n";
+  cout << "Selecione a opção desejada" << endl;
+  cout << "1) Box Blur" << endl;
+  cout << "2) Gaussian Blur" << endl;
   cin >> opt;
 
   // Realizando algoritmo de acordo com opção escolhida
@@ -39,11 +44,11 @@ int main(int argc, char** argv) {
   }
 
   // Demonstrando imagem
-  namedWindow( "Original image", WINDOW_AUTOSIZE );
-  namedWindow( "New image", WINDOW_AUTOSIZE );
+  namedWindow( "Imagem original", WINDOW_AUTOSIZE );
+  namedWindow( "Imagem nova", WINDOW_AUTOSIZE );
 
-  imshow( "Original image", image );
-  imshow( "New image", newImage );
+  imshow( "Imagem original", image );
+  imshow( "Imagem nova", newImage );
 
   waitKey(0);
   return 0;
