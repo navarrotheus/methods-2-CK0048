@@ -8,7 +8,7 @@ using namespace std;
 int main(int argc, char** argv) {
   // Pegando o nome da imagem (presente na pasta)
   string nameImage;
-  cout << "Qual o nome da imagem?" << endl;
+  cout << "Qual o nome da imagem? (a imagem precisa estar nesta pasta)" << endl;
   cin >> nameImage;
 
   // Lendo imagem e colocando-a em escala de cinza
