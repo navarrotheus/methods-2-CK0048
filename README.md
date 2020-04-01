@@ -24,18 +24,22 @@ Esta tarefa consiste em:
     </ol>
 </ol>
 
-<a href="https://github.com/navarrotheus/methods-2-CK0048/tree/master/src/Tarefa_01">Visualizar código fonte</a>
+<a href="https://github.com/navarrotheus/methods-2-CK0048/tree/master/src/Tarefa_01">Visualizar</a>
 
 <h2>Tarefa 02</h2>
 
 <h3>Desenvolvimento de Fórmulas de Newton-Cotes
 </h3>
 
-<a href="">Visualizar código fonte</a>
+Essa tarefa consiste em:
+
+Desenvolver as fórmulas de Newton-Cotes Fechada e Aberta para polinômio de substituição de grau 4
+
+<a href="https://github.com/navarrotheus/methods-2-CK0048/blob/master/Tarefa_02.pdf">Visualizar</a>
 
 <h2>Tarefa 03</h2>
 
 <h3>Implementar e Testar Fórmulas de Newton-Cotes
 </h3>
 
-<a href="">Visualizar código fonte</a>
+<a href="">Visualizar</a>
