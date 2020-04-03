@@ -42,4 +42,8 @@ Desenvolver as fórmulas de Newton-Cotes Fechada e Aberta para polinômio de sub
 <h3>Implementar e Testar Fórmulas de Newton-Cotes
 </h3>
 
-<a href="">Visualizar</a>
+Essa tarefa consiste em:
+
+Implementar as fórmulas de Newton-Cotes Aberta e Fechada para polinômio de substituiço de grau 1 ao 4
+
+<a href="https://github.com/navarrotheus/methods-2-CK0048/tree/master/Tarefa_03">Visualizar</a>
