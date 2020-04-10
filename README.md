@@ -24,7 +24,7 @@ Esta tarefa consiste em:
     </ol>
 </ol>
 
-<a href="https://github.com/navarrotheus/methods-2-CK0048/tree/master/src/Tarefa_01">Visualizar</a>
+<a href="https://github.com/navarrotheus/methods-2-CK0048/tree/master/Tarefa_01">Visualizar</a>
 
 <h2>Tarefa 02</h2>
 
