@@ -47,3 +47,13 @@ Essa tarefa consiste em:
 Implementar as fórmulas de Newton-Cotes Aberta e Fechada para polinômio de substituiço de grau 1 ao 4
 
 <a href="https://github.com/navarrotheus/methods-2-CK0048/tree/master/Tarefa_03">Visualizar</a>
+
+<h2>Tarefa 04</h2>
+
+<h3>Desenvolver estimativa de erros das fórmulas de Newton-Cotes</h3>
+
+Essa tarefa consiste em:
+
+Desenvolver a estimativa do erro para a fórmula aberta com polinômio de substituição de grau 2
+
+<a href="https://github.com/navarrotheus/methods-2-CK0048/blob/master/Tarefa_04.pdf">Visualizar</a>
