@@ -15,19 +15,19 @@ double fxak(double Xi, double Xf, double ak){
   return function((xak(Xi, Xf, ak)));
 }
 
-void gaussLegendre2(double a, double b, double err) {
-    double aux, res = 0, delta, sum, Xi, Xf;
+void gaussLegendre2(double a, double b, double e) {
+    double aux, res = 0, delta, sum, Xi, Xf, err = 1;
     int count, n = 1;
 
     double alpha[2];
-    alpha[0] = -0.5773502;
-    alpha[1] = 0.5773502;
+    alpha[0] = -0.57735;
+    alpha[1] = 0.57735;
 
     double w[2];
     w[0] = 1;
     w[1] = 1;
 
-   while (abs((res - aux) / res) > err) {
+   while (err > e) {
     aux = res;
     delta = (b - a)/n;
     res = 0;
@@ -45,6 +45,7 @@ void gaussLegendre2(double a, double b, double err) {
       res += (Xf - Xi)/2 * sum;
       count++;
     }
+    err = abs((res - aux) / res);
     n *= 2;
   }
     cout << "Gauss-Legendre com 2 pontos de interpolação" << endl;
@@ -52,21 +53,21 @@ void gaussLegendre2(double a, double b, double err) {
     cout << "Resultado: " << res << endl;
 }
 
-void gaussLegendre3(double a, double b, double err) {
-    double aux, res = 0, delta, sum, Xi, Xf;
+void gaussLegendre3(double a, double b, double e) {
+    double aux, res = 0, delta, sum, Xi, Xf, err = 1;
     int count, n = 1;
 
     double alpha[3];
-    alpha[0] = -0.7745966692;
+    alpha[0] = -0.77459;
     alpha[1] = 0;
     alpha[2] = -alpha[0];
 
     double w[3];
-    w[0] = 0.5555555555;
-    w[1] = 0.8888888888;
+    w[0] = 0.55555;
+    w[1] = 0.88888;
     w[2] = w[0];
 
-   while (abs((res - aux) / res) > err) {
+   while (err > e) {
     aux = res;
     delta = (b - a)/n;
     res = 0;
@@ -84,9 +85,52 @@ void gaussLegendre3(double a, double b, double err) {
       res += (Xf - Xi)/2 * sum;
       count++;
     }
+    err = abs((res - aux) / res);
     n *= 2;
   }
     cout << "Gauss-Legendre com 3 pontos de interpolação" << endl;
+    cout << "Iterações: " << count << endl;
+    cout << "Resultado: " << res << endl;
+}
+
+void gaussLegendre4(double a, double b, double e) {
+    double aux, res = 0, delta, sum, Xi, Xf, err = 1;
+    int count, n = 1;
+
+    double alpha[4];
+    alpha[0] = -0.861136;
+    alpha[1] = -0.339981;
+    alpha[2] = 0.339981;
+    alpha[3] = 0.861136;
+
+    double w[4];
+    w[0] = 0.347854;
+    w[1] = 0.652145;
+    w[2] = 0.652145;
+    w[3] = 0.347854;
+
+   while (err > e) {
+    aux = res;
+    delta = (b - a)/n;
+    res = 0;
+    count = 0;
+
+    for(int i = 0; i < n; i++) {
+      Xi = a + i * delta;
+      Xf = Xi + delta;
+      sum = 0;
+
+      for (int k = 0; k < 4; k++){
+        sum += (fxak(Xi, Xf, alpha[k]) * w[k]);
+      }
+
+      res += (Xf - Xi)/2 * sum;
+      count++;
+    }
+    err = abs((res - aux) / res);
+    n *= 2;
+  }
+    cout << "Gauss-Legendre com 4 pontos de interpolação" << endl;
     cout << "Iterações: " << count << endl;
     cout << "Resultado: " << res << endl;
 }
@@ -101,6 +145,10 @@ int main() {
   cout << endl;
   
   gaussLegendre3(a, b, err);
+
+  cout << endl;
+
+  gaussLegendre4(a, b, err);
 
   cout << endl;
 }
