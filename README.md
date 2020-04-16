@@ -69,8 +69,6 @@ Essa tarefa consiste em:
 
 Desenvolver a Quadratura de Gauss-Legendre com 4 pontos e implementar as Quadraturas de Gauss-Legendre de 2 a 4 pontos.
 
-<a href="">Visualizar</a>
-
 <h2>Tarefa 06 :x:</h2>
 
 <h3>Desenvolver Quadraturas de Gauss-Hermite, Gauss-Laguerre e Gauss-Chebyshev para 4 pontos</h3>
@@ -79,8 +77,6 @@ Essa tarefa consiste em:
 
 Desenvolver Quadraturas de Gauss-Hermite, Gauss-Laguerre e Gauss-Chebyshev para 4 pontos.
 
-<a href="">Visualizar</a>
-
 <h2>Tarefa 07 :x:</h2>
 
 <h3>Implementar estratégias de solução para Integrais com singularidade.</h3>
@@ -88,5 +84,3 @@ Desenvolver Quadraturas de Gauss-Hermite, Gauss-Laguerre e Gauss-Chebyshev para 
 Essa tarefa consiste em:
 
 Implementar as estratégias de solução 2 com exponencial simples e dupla.
-
-<a href="">Visualizar</a>
